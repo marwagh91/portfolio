@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #020617;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* HERO */
+header {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+/* SECTION */
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* PROJECT */
+.project {
+  background: #1e293b;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.project a {
+  color: #38bdf8;
+}
