@@ -15,15 +15,10 @@
             --border-color: #262626;
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
-            --accent: #38bdf8; /* Un bleu subtil pour les liens */
+            --accent: #38bdf8;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
         body {
             background-color: var(--bg-color);
@@ -32,250 +27,209 @@
             overflow-x: hidden;
         }
 
-        /* Container unique pour l'aspect épuré */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px;
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAVIGATION DYNAMIQUE (Style Capture) */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        /* NAVIGATION */
         nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 0;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
+            justify-content: center;
+            padding: 20px 0;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 24px;
+            gap: 30px;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--text-primary);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            padding: 80px 0;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 650px;
-            margin-bottom: 32px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        /* PROJECTS SECTION */
-        .section-title {
-            font-size: 1.5rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 32px;
-            padding-top: 60px;
-        }
-
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
         }
 
-        .project-card:hover {
-            border-color: #404040;
-            transform: scale(1.01);
-        }
-
-        .project-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 4px;
+        nav a:hover, nav a.active {
             color: var(--text-primary);
         }
 
-        .project-info p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--text-primary);
         }
 
-        .project-tag {
-            font-size: 0.75rem;
-            background: #1e1e1e;
-            padding: 4px 10px;
-            border-radius: 6px;
-            color: var(--text-secondary);
+        /* SECTIONS */
+        section { padding: 80px 0; border-bottom: 1px solid var(--border-color); }
+        .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+
+        /* ABOUT ME */
+        .about-content { font-size: 1.1rem; color: var(--text-secondary); text-align: center; max-width: 750px; margin: 0 auto; }
+
+        /* SERVICES (Style Grid) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
         }
 
-        /* SKILLS (Style Minimaliste) */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 60px;
+        .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        
+        .service-icon { 
+            width: 50px; height: 50px; border: 2px solid var(--accent); 
+            border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; margin: 0 auto 20px; color: var(--accent);
         }
 
-        .skill-item {
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
+        .service-card h3 { font-size: 1rem; margin-bottom: 10px; text-transform: uppercase; }
+        .service-card p { font-size: 0.85rem; color: var(--text-secondary); }
 
-        /* FOOTER */
-        footer {
-            margin-top: 100px;
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
+        /* PROJECTS */
+        .projects-list { display: flex; flex-direction: column; gap: 12px; }
+        .project-card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 20px; display: flex;
+            justify-content: space-between; align-items: center;
+            text-decoration: none; transition: 0.3s;
         }
+        .project-card:hover { border-color: #444; }
+        .project-info h3 { font-size: 1rem; color: var(--text-primary); }
+        .project-info p { font-size: 0.85rem; color: var(--text-secondary); }
+        .tag { font-size: 0.75rem; color: var(--text-secondary); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; }
 
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.2rem; }
-            .project-card { flex-direction: column; align-items: flex-start; gap: 16px; }
-        }
+        footer { padding: 40px 0; text-align: center; color: var(--text-secondary); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <nav data-aos="fade-down">
-            <div class="logo">MG.</div>
-            <ul>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <section class="hero">
-            <h1 data-aos="fade-up">Marwa Ghanmi</h1>
-            <p data-aos="fade-up" data-aos-delay="100">
-                Développeuse Web senior avec plus de 5 ans d'expérience. Spécialisée dans la création d'applications web robustes avec <b>PHP, WordPress, Angular et Node.js</b>.
-            </p>
-            <div class="social-links" data-aos="fade-up" data-aos-delay="200">
-                <a href="#contact" class="project-tag" style="text-decoration:none; background: var(--text-primary); color: black; font-weight: 600;">Me contacter</a>
-                <a href="mailto:marwaghanmi.professional@gmail.com" class="project-tag" style="text-decoration:none;">Email</a>
+    <div class="container">
+        <section id="home" style="text-align: center; border-bottom: none;">
+            <h1 data-aos="fade-up" style="font-size: 3.5rem; margin-bottom: 10px;">Marwa Ghanmi</h1>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: var(--accent); font-weight: 600; letter-spacing: 2px;">FULLSTACK DEVELOPER</p>
+        </section>
+
+        <section id="about" data-aos="fade-up">
+            <h2 class="section-title">À PROPOS DE MOI</h2>
+            <div class="about-content">
+                <p>Développeuse web avec plus de 5 ans d'expérience [cite: 4], je suis spécialisée dans la conception de solutions PHP et WordPress performantes. Mon approche allie expertise technique et sens de l'ergonomie pour créer des sites sécurisés et parfaitement adaptés aux besoins clients[cite: 5].</p>
             </div>
         </section>
 
-        <h2 class="section-title" data-aos="fade-up">Stack Technique</h2>
-        <div class="skills-grid" data-aos="fade-up">
-            <span class="skill-item">PHP / MySQL</span>
-            <span class="skill-item">WordPress / Gutenberg</span>
-            <span class="skill-item">Angular 8 / Node.js</span>
-            <span class="skill-item">React JS</span>
-            <span class="skill-item">Docker / Gitlab</span>
-            <span class="skill-item">Flutter</span>
-        </div>
-
-        <h2 class="section-title" id="projects" data-aos="fade-up">Projets Sélectionnés</h2>
-        <div class="projects-list">
-            
-            <a href="https://www.gorbio.fr" target="_blank" class="project-card" data-aos="fade-up">
-                <div class="project-info">
-                    <h3>Commune de Gorbio</h3>
-                    <p>Développement de blocs Gutenberg & intégration Solr.</p>
+        <section id="services" data-aos="fade-up">
+            <h2 class="section-title">MES SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>DÉVELOPPEMENT WEB</h3>
+                    <p>Conception de sites vitrines et applications web robustes avec PHP, WordPress et Angular[cite: 16, 169].</p>
                 </div>
-                <span class="project-tag">Visiter →</span>
-            </a>
-
-            <a href="https://www.soisy-sous-montmorency.fr" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-info">
-                    <h3>Ville de Soisy</h3>
-                    <p>Extranet sécurisé et synchronisation LDAP.</p>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>MOBILE & RESPONSIVE</h3>
+                    <p>Développement d'applications mobiles avec Flutter et interfaces adaptées à tous les écrans[cite: 112, 164].</p>
                 </div>
-                <span class="project-tag">Visiter →</span>
-            </a>
-
-            <a href="https://www.maenner-staerken.de" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-info">
-                    <h3>Männer Stärken</h3>
-                    <p>Application de prévention avec React JS & WordPress.</p>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>BACKEND & API</h3>
+                    <p>Architecture de bases de données (MySQL, MongoDB) et création d'API sécurisées (Node.js, JWT)[cite: 140, 168, 169].</p>
                 </div>
-                <span class="project-tag">Visiter →</span>
-            </a>
+            </div>
+        </section>
 
-            <a href="https://adec.corsica" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="project-info">
-                    <h3>ADEC Corse</h3>
-                    <p>Optimisation plugins WordPress & Multilinguisme.</p>
-                </div>
-                <span class="project-tag">Visiter →</span>
-            </a>
+        <section id="projects">
+            <h2 class="section-title">PROJETS RÉCENTS</h2>
+            <div class="projects-list">
+                <a href="https://www.gorbio.fr" target="_blank" class="project-card" data-aos="fade-up">
+                    <div class="project-info"><h3>Commune de Gorbio</h3><p>Blocs Gutenberg & Moteur Solr[cite: 11, 15].</p></div>
+                    <span class="tag">WordPress</span>
+                </a>
+                <a href="https://www.maenner-staerken.de" target="_blank" class="project-card" data-aos="fade-up">
+                    <div class="project-info"><h3>Männer Stärken</h3><p>Application de prévention (React JS)[cite: 103, 108].</p></div>
+                    <span class="tag">React</span>
+                </a>
+                <a href="https://prianou.com" target="_blank" class="project-card" data-aos="fade-up">
+                    <div class="project-info"><h3>Prianou</h3><p>Géofencing & Solution Mobile[cite: 157, 160].</p></div>
+                    <span class="tag">Angular/Node</span>
+                </a>
+            </div>
+        </section>
 
-            <a href="https://prianou.com" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="project-info">
-                    <h3>Prianou</h3>
-                    <p>Solution Web/Mobile de Géofencing (Angular & Node).</p>
-                </div>
-                <span class="project-tag">Visiter →</span>
-            </a>
-
-        </div>
-
-        <h2 class="section-title" id="contact" data-aos="fade-up">Contact</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 20px;" data-aos="fade-up">
-            Disponible pour de nouvelles opportunités ou collaborations techniques.
-        </p>
-        <a href="mailto:marwaghanmi.professional@gmail.com" style="color: var(--accent); text-decoration: none; font-weight: 500;" data-aos="fade-up">
-            marwaghanmi.professional@gmail.com
-        </a>
+        <section id="contact" style="border-bottom: none; text-align: center;">
+            <h2 class="section-title">ME CONTACTER</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Prête pour de nouveaux défis techniques.</p>
+            <a href="mailto:marwaghanmi.professional@gmail.com" style="color: var(--accent); text-decoration: none; font-size: 1.2rem; font-weight: 600;">marwaghanmi.professional@gmail.com [cite: 172]</a>
+            <p style="margin-top: 10px; color: var(--text-secondary);">+216 20 20 26 92 [cite: 173]</p>
+        </section>
 
         <footer>
-            <p>© 2026 Marwa Ghanmi</p>
-            <p>Built with ❤️ and Code</p>
+            <p>© 2026 Marwa Ghanmi | Built with Passion [cite: 170]</p>
         </footer>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
+        AOS.init({ duration: 800, once: true });
+
+        // Gestion de la navigation active au scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
