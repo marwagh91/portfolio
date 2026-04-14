@@ -13,10 +13,10 @@
 }
 
 :root {
-    --bg-color: #0A0A0A;        /* noir profond */
-    --second-bg-color: #151515; /* gris noir */
-    --text-color: #F5F5F5;      /* blanc propre */
-    --main-color: #D4AF37;      /* gold luxe */
+    --bg-color: #0F0F14;
+    --second-bg-color: #1A1A24;
+    --text-color: #EDEDED;
+    --main-color: #00D4FF; /* cyan tech */
 }
 
 html {
