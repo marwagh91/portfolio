@@ -1,12 +1,12 @@
 // Typed JS
-  const typed = new Typed(".multiple-text", {
-    strings: ["Developpeuse Web", "Developpeuse Backend ", "Developpeuse Full Stack ", "Developpeuse WordPress"],
+// 1. Typed JS (Une seule instance pour .multiple-text)
+const typed = new Typed(".multiple-text", {
+    strings: ["Développeuse Web", "Experte WordPress", "Spécialiste IA", "Full Stack PHP"],
     typeSpeed: 100,
     backSpeed: 60,
     backDelay: 1000,
     loop: true
-  });
-
+});
 // Menu Toggle
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
