@@ -1,12 +1,11 @@
 // Typed JS
-// 1. Typed JS (Une seule instance pour .multiple-text)
-const typed = new Typed(".multiple-text", {
-    strings: ["Développeuse Web", "Experte WordPress", "Spécialiste IA", "Full Stack PHP"],
+  const typed = new Typed(".multiple-text", {
+    strings: ["Frontend Developer", "Backend Developer", "Full Stack Developer", "Web Designer"],
     typeSpeed: 100,
     backSpeed: 60,
     backDelay: 1000,
     loop: true
-});
+  });
 // Menu Toggle
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
