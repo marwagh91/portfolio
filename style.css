@@ -31,7 +31,7 @@ body {
 
 section {
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: 10rem 5%;
 }
 
 .header {
@@ -193,28 +193,27 @@ span {
     width: 35vw;
     border-radius: 20px;
 }
-
+.about-content {
+    text-align: left;
+}
 .heading {
     text-align: center;
     font-size: 4.5rem;
-    margin-left: 10%;
+    margin-bottom: 4rem;
 }
 
 .about-content h2 {
     text-align: left;
     line-height: 1.2;
-      margin-left: 10%;
 }
 
 .about-content h3 {
     font-size: 2.6rem;
-      margin-left: 10%;
 }
 
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
-      margin-left: 10%;
 }
 
 .skills h2 {
