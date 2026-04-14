@@ -9,7 +9,7 @@ backSpeed: 60,
 loop: true
 });
 
-// menu mobile
+// mobile menu
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
