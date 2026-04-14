@@ -159,7 +159,7 @@ span {
 .btn:hover {
     box-shadow: none;
 }
-.btn .about {
+.btn-about {
     display: inline-block;
     padding: 1rem 2.8rem;
     background: var(--main-color);
@@ -173,7 +173,7 @@ span {
     margin-left: 10%;
 }
 
-.btn .about:hover {
+.btn-about:hover {
     box-shadow: none;
 }
 .btn-2 {
