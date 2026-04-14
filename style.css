@@ -13,9 +13,9 @@
 }
 
 :root {
-    --bg-color: #F5F6FA;
-    --second-bg-color: #FFFFFF; 
-    --text-color: #2C2C2C; 
+    --bg-color: #0A0A0D;
+    --second-bg-color: #1C1C27;
+    --text-color: #EDEDED;
     --main-color: #C9A227;
 }
 
@@ -31,7 +31,7 @@ body {
 
 section {
     min-height: 100vh;
-    padding: 10rem 5%;
+    padding: 10rem 9% 2rem;
 }
 
 .header {
@@ -193,27 +193,28 @@ span {
     width: 35vw;
     border-radius: 20px;
 }
-.about-content {
-    text-align: left;
-}
+
 .heading {
     text-align: center;
     font-size: 4.5rem;
-    margin-bottom: 4rem;
+    margin-left: 10%;
 }
 
 .about-content h2 {
     text-align: left;
     line-height: 1.2;
+      margin-left: 10%;
 }
 
 .about-content h3 {
     font-size: 2.6rem;
+      margin-left: 10%;
 }
 
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+      margin-left: 10%;
 }
 
 .skills h2 {
@@ -242,7 +243,7 @@ span {
 }
 
 .skills-container .skills-box {
-  background: #0a0a0d;
+  background: var(--second-bg-color);
   padding: 3rem 2rem 4rem;
   border-radius: 2rem;
   text-align: center;
@@ -428,7 +429,7 @@ span {
 }
 
 .services-container .services-box:hover {
-  border-color: #0a0a0d;
+  border-color: var(--main-color);
   transform: scale(1.05);
   /* 🔹 No shadow on hover either */
 }
