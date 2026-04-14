@@ -242,7 +242,7 @@ span {
 }
 
 .skills-container .skills-box {
-  background: var(--second-bg-color);
+  background: #0a0a0d;
   padding: 3rem 2rem 4rem;
   border-radius: 2rem;
   text-align: center;
@@ -428,7 +428,7 @@ span {
 }
 
 .services-container .services-box:hover {
-  border-color: var(--main-color);
+  border-color: #0a0a0d;
   transform: scale(1.05);
   /* 🔹 No shadow on hover either */
 }
